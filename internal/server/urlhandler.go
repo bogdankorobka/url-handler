@@ -1,9 +1,7 @@
 package server
 
 import (
-	"fmt"
 	"net/http"
-	"time"
 
 	"github.com/go-chi/render"
 )
@@ -19,8 +17,6 @@ import (
 // @Router       /url-handler [POST]
 func UrlHandler() func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println("asdsad")
-		time.Sleep(10 * time.Second)
 		resp, err := http.Get("http://golang.org")
 		if err != nil {
 			render.Status(r, http.StatusInternalServerError)
