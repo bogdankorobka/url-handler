@@ -1,0 +1,24 @@
+basePath: /api/v1
+info:
+  contact: {}
+  title: URL Handler API
+paths:
+  /url-handler:
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "422":
+          description: Validation error
+        "429":
+          description: Too many requests
+        "500":
+          description: Server Error
+      summary: UrlHandler
+      tags:
+      - UrlHandler
+swagger: "2.0"

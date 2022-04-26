@@ -13,3 +13,4 @@
 ## Инструкция запуска
 - Требуется установленная версия Golang 1.18
 - Запуск `make init`
+- Swagger UI [http://localhost:3000/swagger/index.html](http://localhost:3000/swagger/index.html)
