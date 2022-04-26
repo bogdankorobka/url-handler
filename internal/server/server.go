@@ -9,6 +9,7 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/go-chi/render"
 	httpSwagger "github.com/swaggo/http-swagger"
 )
 
@@ -62,6 +63,13 @@ func (s *APIServer) configureRouter() http.Handler {
 		r.Use(Limit(3))
 
 		r.Post("/url-handler", UrlHandler())
+	})
+
+	r.Get("/test-content-lenght", func(w http.ResponseWriter, r *http.Request) {
+		render.Status(r, http.StatusOK)
+		render.JSON(w, r, render.M{
+			"message": "test",
+		})
 	})
 
 	return r

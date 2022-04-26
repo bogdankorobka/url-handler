@@ -28,6 +28,17 @@ const docTemplate = `{
                     "UrlHandler"
                 ],
                 "summary": "UrlHandler",
+                "parameters": [
+                    {
+                        "description": "Url List",
+                        "name": "Request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/server.UrlListRequest"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK"
@@ -41,6 +52,26 @@ const docTemplate = `{
                     "500": {
                         "description": "Server Error"
                     }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "server.UrlListRequest": {
+            "type": "object",
+            "required": [
+                "url_list"
+            ],
+            "properties": {
+                "url_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        "https://google.com",
+                        "https://yandex.ru"
+                    ]
                 }
             }
         }

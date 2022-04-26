@@ -1,4 +1,17 @@
 basePath: /api/v1
+definitions:
+  server.UrlListRequest:
+    properties:
+      url_list:
+        example:
+        - https://google.com
+        - https://yandex.ru
+        items:
+          type: string
+        type: array
+    required:
+    - url_list
+    type: object
 info:
   contact: {}
   title: URL Handler API
@@ -7,6 +20,13 @@ paths:
     post:
       consumes:
       - application/json
+      parameters:
+      - description: Url List
+        in: body
+        name: Request
+        required: true
+        schema:
+          $ref: '#/definitions/server.UrlListRequest'
       produces:
       - application/json
       responses:
