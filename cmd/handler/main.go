@@ -16,7 +16,7 @@ func main() {
 	serverCtx, serverStopCtx := context.WithCancel(context.Background())
 
 	// create server
-	s := server.NewServer("localhost:3000")
+	s := server.NewServer("localhost:3001")
 
 	// graceful shutdown
 	sig := make(chan os.Signal, 1)
